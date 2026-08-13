@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - LibDate</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="navbar-left">
+                <h1 class="logo">💕 LibDate</h1>
+                <a href="index.html" class="nav-link">Home</a>
+            </div>
+            <div class="navbar-right">
+                <a href="#" class="nav-link">Logout</a>
+            </div>
+        </nav>
+
+        <!-- Search Page Content -->
+        <div class="search-page">
+            <!-- Search Filters -->
+            <div class="search-filters-panel">
+                <h3>Search Filters</h3>
+                <div class="filter-group">
+                    <label>Age</label>
+                    <select class="filter-input">
+                        <option value="">Any Age</option>
+                        <option value="18-25">18-25</option>
+                        <option value="25-35">25-35</option>
+                        <option value="35-50">35-50</option>
+                        <option value="50+">50+</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Location</label>
+                    <select class="filter-input">
+                        <option value="">Any Location</option>
+                        <option value="new-york">New York</option>
+                        <option value="los-angeles">Los Angeles</option>
+                        <option value="chicago">Chicago</option>
+                        <option value="houston">Houston</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Interests</label>
+                    <input type="text" class="filter-input" placeholder="e.g., hiking, travel">
+                </div>
+
+                <button class="search-btn">Apply Filters</button>
+            </div>
+
+            <!-- Search Results -->
+            <div class="search-results">
+                <h3>Search Results</h3>
+                <div class="results-list">
+                    <!-- Result 1 -->
+                    <div class="result-item">
+                        <div class="result-photo">
+                            <img src="https://via.placeholder.com/100" alt="Profile">
+                        </div>
+                        <div class="result-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>26, New York</p>
+                            <p class="result-interests">Photography • Travel • Cooking</p>
+                        </div>
+                        <button class="verify-btn">View</button>
+                    </div>
+
+                    <!-- Result 2 -->
+                    <div class="result-item">
+                        <div class="result-photo">
+                            <img src="https://via.placeholder.com/100" alt="Profile">
+                        </div>
+                        <div class="result-info">
+                            <h4>Emma Davis</h4>
+                            <p>24, New York</p>
+                            <p class="result-interests">Hiking • Art • Music</p>
+                        </div>
+                        <button class="verify-btn">View</button>
+                    </div>
+
+                    <!-- Result 3 -->
+                    <div class="result-item">
+                        <div class="result-photo">
+                            <img src="https://via.placeholder.com/100" alt="Profile">
+                        </div>
+                        <div class="result-info">
+                            <h4>Jessica Martinez</h4>
+                            <p>28, New York</p>
+                            <p class="result-interests">Yoga • Fitness • Wellness</p>
+                        </div>
+                        <button class="verify-btn">View</button>
+                    </div>
+
+                    <!-- Result 4 -->
+                    <div class="result-item">
+                        <div class="result-photo">
+                            <img src="https://via.placeholder.com/100" alt="Profile">
+                        </div>
+                        <div class="result-info">
+                            <h4>Lisa Anderson</h4>
+                            <p>27, New York</p>
+                            <p class="result-interests">Reading • Movies • Dining</p>
+                        </div>
+                        <button class="verify-btn">View</button>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn">← Previous</button>
+                    <span class="page-info">Page 1 of 5</span>
+                    <button class="page-btn">Next →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Navigation -->
+        <footer class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="messaging.html">Messages</a>
+            <a href="matches.html">Matches</a>
+        </footer>
+    </div>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>

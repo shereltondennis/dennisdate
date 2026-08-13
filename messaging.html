@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - LibDate</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="navbar-left">
+                <h1 class="logo">💕 LibDate</h1>
+                <a href="index.html" class="nav-link">Home</a>
+            </div>
+            <div class="navbar-right">
+                <a href="#" class="nav-link">Logout</a>
+            </div>
+        </nav>
+
+        <!-- Messaging Page Content -->
+        <div class="messaging-page">
+            <!-- Conversations List -->
+            <div class="conversations-panel">
+                <h3>Conversations</h3>
+                <div class="conversations-list">
+                    <div class="conversation-item active">
+                        <div class="conv-avatar">
+                            <img src="https://via.placeholder.com/50" alt="Avatar">
+                        </div>
+                        <div class="conv-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>That sounds amazing! When would...</p>
+                        </div>
+                        <span class="conv-time">2m</span>
+                    </div>
+
+                    <div class="conversation-item">
+                        <div class="conv-avatar">
+                            <img src="https://via.placeholder.com/50" alt="Avatar">
+                        </div>
+                        <div class="conv-info">
+                            <h4>Emma Davis</h4>
+                            <p>Thanks for the recommendation!</p>
+                        </div>
+                        <span class="conv-time">1h</span>
+                    </div>
+
+                    <div class="conversation-item">
+                        <div class="conv-avatar">
+                            <img src="https://via.placeholder.com/50" alt="Avatar">
+                        </div>
+                        <div class="conv-info">
+                            <h4>Jessica Martinez</h4>
+                            <p>Haha, that's funny!</p>
+                        </div>
+                        <span class="conv-time">3h</span>
+                    </div>
+
+                    <div class="conversation-item">
+                        <div class="conv-avatar">
+                            <img src="https://via.placeholder.com/50" alt="Avatar">
+                        </div>
+                        <div class="conv-info">
+                            <h4>Lisa Anderson</h4>
+                            <p>I'd love to meet up sometime</p>
+                        </div>
+                        <span class="conv-time">5h</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Thread -->
+            <div class="message-thread">
+                <div class="thread-header">
+                    <h3>Sarah Johnson</h3>
+                    <p>26, New York</p>
+                </div>
+
+                <div class="messages-container">
+                    <div class="message incoming">
+                        <p>Hey! How's your day going?</p>
+                        <span class="msg-time">10:30 AM</span>
+                    </div>
+
+                    <div class="message outgoing">
+                        <p>Great! Just finished work. How about you?</p>
+                        <span class="msg-time">10:35 AM</span>
+                    </div>
+
+                    <div class="message incoming">
+                        <p>Pretty good! I'm planning a hiking trip this weekend</p>
+                        <span class="msg-time">10:36 AM</span>
+                    </div>
+
+                    <div class="message incoming">
+                        <p>That sounds amazing! When would be a good time?</p>
+                        <span class="msg-time">10:37 AM</span>
+                    </div>
+
+                    <div class="message outgoing">
+                        <p>Saturday morning? I love hiking!</p>
+                        <span class="msg-time">10:40 AM</span>
+                    </div>
+                </div>
+
+                <!-- Message Input -->
+                <div class="message-input-section">
+                    <input type="text" class="message-input" placeholder="Type your message...">
+                    <button class="send-btn">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Navigation -->
+        <footer class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="search.html">Search</a>
+            <a href="matches.html">Matches</a>
+        </footer>
+    </div>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
