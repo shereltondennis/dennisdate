@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - LibDate</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/signup.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="navbar-left">
+                <div class="logo-section">
+                    <img src="images/liberiaflg.jpg" alt="Liberia Flag" class="flag-logo">
+                    <h1 class="logo">💕 LibDate</h1>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <a href="index.html" class="nav-link">Back to Home</a>
+            </div>
+        </nav>
+
+        <!-- Sign Up Form -->
+        <div class="signup-container">
+            <div class="signup-box">
+                <h2>Create Your LibDate Profile</h2>
+                <p class="signup-subtitle">Join thousands of singles looking for love in Liberia and beyond</p>
+                
+                <form id="signupForm" class="signup-form">
+                    <!-- Step 1: Basic Information -->
+                    <div class="form-section" id="step1">
+                        <h3>Step 1: Basic Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="age">Age *</label>
+                                <input type="number" id="age" name="age" min="18" max="100" required placeholder="18-100">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender *</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="female">Female</option>
+                                    <option value="male">Male</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <input type="password" id="password" name="password" required placeholder="Create a strong password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password *</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number *</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="+231 XX XXX XXXX">
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Location & Background -->
+                    <div class="form-section" id="step2" style="display:none;">
+                        <h3>Step 2: Location & Background</h3>
+
+                        <div class="form-group">
+                            <label for="country">Country of Residence *</label>
+                            <input type="text" id="country" name="country" required placeholder="e.g., Liberia, USA, Canada">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="state">State/Province *</label>
+                                <input type="text" id="state" name="state" required placeholder="e.g., Montserrado">
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <input type="text" id="city" name="city" required placeholder="e.g., Monrovia">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ethnicity">Ethnicity</label>
+                            <select id="ethnicity" name="ethnicity">
+                                <option value="">Select Ethnicity</option>
+                                <option value="mandingo">Mandingo</option>
+                                <option value="krahn">Krahn</option>
+                                <option value="kpelle">Kpelle</option>
+                                <option value="vai">Vai</option>
+                                <option value="kru">Kru</option>
+                                <option value="bassa">Bassa</option>
+                                <option value="mano">Mano</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="citizenship">Citizenship</label>
+                            <input type="text" id="citizenship" name="citizenship" placeholder="e.g., Liberian, American">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="religion">Religion</label>
+                            <select id="religion" name="religion">
+                                <option value="">Select Religion</option>
+                                <option value="christian">Christian</option>
+                                <option value="muslim">Muslim</option>
+                                <option value="jewish">Jewish</option>
+                                <option value="buddhist">Buddhist</option>
+                                <option value="hindu">Hindu</option>
+                                <option value="atheist">Atheist</option>
+                                <option value="agnostic">Agnostic</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Family & Lifestyle -->
+                    <div class="form-section" id="step3" style="display:none;">
+                        <h3>Step 3: Family & Lifestyle</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="children">Number of Children *</label>
+                                <select id="children" name="children" required>
+                                    <option value="">Select Number</option>
+                                    <option value="0">0 Children</option>
+                                    <option value="1">1 Child</option>
+                                    <option value="2">2 Children</option>
+                                    <option value="3">3 Children</option>
+                                    <option value="4">4 Children</option>
+                                    <option value="5+">5+ Children</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="wantChildren">Want Children in Future? *</label>
+                                <select id="wantChildren" name="wantChildren" required>
+                                    <option value="">Select Option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                    <option value="maybe">Maybe</option>
+                                    <option value="undecided">Undecided</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="maritalStatus">Marital Status *</label>
+                                <select id="maritalStatus" name="maritalStatus" required>
+                                    <option value="">Select Status</option>
+                                    <option value="single">Single</option>
+                                    <option value="divorced">Divorced</option>
+                                    <option value="widowed">Widowed</option>
+                                    <option value="separated">Separated</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="livingWith">Currently Living With *</label>
+                                <select id="livingWith" name="livingWith" required>
+                                    <option value="">Select Option</option>
+                                    <option value="alone">Alone</option>
+                                    <option value="family">Family</option>
+                                    <option value="roommates">Roommates</option>
+                                    <option value="partner">Partner</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="smoking">Smoking Habits</label>
+                            <select id="smoking" name="smoking">
+                                <option value="">Select Option</option>
+                                <option value="non-smoker">Non-smoker</option>
+                                <option value="smoker">Smoker</option>
+                                <option value="occasional">Occasional</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="drinking">Drinking Habits</label>
+                            <select id="drinking" name="drinking">
+                                <option value="">Select Option</option>
+                                <option value="non-drinker">Non-drinker</option>
+                                <option value="social">Social Drinker</option>
+                                <option value="regular">Regular Drinker</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fitness">Fitness Level</label>
+                            <select id="fitness" name="fitness">
+                                <option value="">Select Level</option>
+                                <option value="very-active">Very Active</option>
+                                <option value="active">Active</option>
+                                <option value="moderate">Moderate</option>
+                                <option value="light">Light</option>
+                                <option value="sedentary">Sedentary</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Education & Career -->
+                    <div class="form-section" id="step4" style="display:none;">
+                        <h3>Step 4: Education & Career</h3>
+
+                        <div class="form-group">
+                            <label for="education">Educational Status *</label>
+                            <select id="education" name="education" required>
+                                <option value="">Select Education Level</option>
+                                <option value="high-school">High School</option>
+                                <option value="some-college">Some College</option>
+                                <option value="bachelor">Bachelor's Degree</option>
+                                <option value="master">Master's Degree</option>
+                                <option value="phd">PhD/Doctorate</option>
+                                <option value="vocational">Vocational/Technical</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fieldOfStudy">Field of Study</label>
+                            <input type="text" id="fieldOfStudy" name="fieldOfStudy" placeholder="e.g., Engineering, Business, Medicine">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="occupation">Occupation/Job Title *</label>
+                            <input type="text" id="occupation" name="occupation" required placeholder="e.g., Software Engineer, Teacher, Doctor">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="industry">Industry</label>
+                            <select id="industry" name="industry">
+                                <option value="">Select Industry</option>
+                                <option value="technology">Technology</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="education">Education</option>
+                                <option value="finance">Finance</option>
+                                <option value="government">Government</option>
+                                <option value="business">Business</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="agriculture">Agriculture</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="incomeLevel">Income Level</label>
+                            <select id="incomeLevel" name="incomeLevel">
+                                <option value="">Select Income Level</option>
+                                <option value="under-30k">Under $30,000</option>
+                                <option value="30k-50k">$30,000 - $50,000</option>
+                                <option value="50k-75k">$50,000 - $75,000</option>
+                                <option value="75k-100k">$75,000 - $100,000</option>
+                                <option value="100k-150k">$100,000 - $150,000</option>
+                                <option value="150k+">$150,000+</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="employmentStatus">Employment Status</label>
+                            <select id="employmentStatus" name="employmentStatus">
+                                <option value="">Select Status</option>
+                                <option value="employed">Employed</option>
+                                <option value="self-employed">Self-Employed</option>
+                                <option value="unemployed">Unemployed</option>
+                                <option value="student">Student</option>
+                                <option value="retired">Retired</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Interests & About You -->
+                    <div class="form-section" id="step5" style="display:none;">
+                        <h3>Step 5: Interests & About You</h3>
+
+                        <div class="form-group">
+                            <label for="interests">Interests/Hobbies (comma separated) *</label>
+                            <textarea id="interests" name="interests" required placeholder="e.g., hiking, photography, cooking, travel" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="aboutMe">About Me *</label>
+                            <textarea id="aboutMe" name="aboutMe" required placeholder="Tell us about yourself. What makes you unique?" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="idealPartner">What I'm Looking For</label>
+                            <textarea id="idealPartner" name="idealPartner" placeholder="Describe your ideal partner" rows="4"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="languages">Languages Spoken</label>
+                            <input type="text" id="languages" name="languages" placeholder="e.g., English, French, Liberian Creole">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="height">Height</label>
+                            <input type="text" id="height" name="height" placeholder="e.g., 5'6\" or 168 cm">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bodyType">Body Type</label>
+                            <select id="bodyType" name="bodyType">
+                                <option value="">Select Body Type</option>
+                                <option value="slim">Slim</option>
+                                <option value="athletic">Athletic</option>
+                                <option value="average">Average</option>
+                                <option value="curvy">Curvy</option>
+                                <option value="heavyset">Heavyset</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="petPreference">Pet Preference</label>
+                            <select id="petPreference" name="petPreference">
+                                <option value="">Select Option</option>
+                                <option value="love-pets">Love Pets</option>
+                                <option value="okay-with-pets">Okay with Pets</option>
+                                <option value="no-pets">No Pets</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 6: Photo & Agreement -->
+                    <div class="form-section" id="step6" style="display:none;">
+                        <h3>Step 6: Profile Photo & Agreement</h3>
+
+                        <div class="form-group">
+                            <label for="profilePhoto">Upload Profile Photo</label>
+                            <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
+                            <p class="form-hint">Recommended: Clear, recent photo (JPG, PNG)</p>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">I agree to the Terms of Service and Privacy Policy *</label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="truthful" name="truthful" required>
+                            <label for="truthful">I confirm that all information provided is truthful and accurate *</label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Send me updates and notifications about new matches</label>
+                        </div>
+                    </div>
+
+                    <!-- Step 7: Video Introduction -->
+                    <div class="form-section" id="step7" style="display:none;">
+                        <h3>Step 7: Video Introduction (30-60 seconds)</h3>
+                        <p class="form-hint" style="margin-bottom: 20px;">Record a short video introduction so others can see you in action! This is optional but highly recommended.</p>
+
+                        <div class="video-recording-section">
+                            <!-- Video Preview -->
+                            <div class="video-preview-box">
+                                <video id="videoPreview" class="video-preview" muted playsinline></video>
+                                <div class="video-placeholder" id="videoPlaceholder">
+                                    📹 Video will appear here
+                                </div>
+                            </div>
+
+                            <!-- Recording Controls -->
+                            <div class="video-controls">
+                                <div class="control-buttons">
+                                    <button type="button" id="startRecordBtn" class="btn-record" onclick="startRecording()">
+                                        🔴 Start Recording
+                                    </button>
+                                    <button type="button" id="stopRecordBtn" class="btn-record stop" onclick="stopRecording()" disabled style="display:none;">
+                                        ⏹️ Stop Recording
+                                    </button>
+                                    <button type="button" id="retakeBtn" class="btn-record retake" onclick="retakeVideo()" style="display:none;">
+                                        🔄 Retake Video
+                                    </button>
+                                </div>
+
+                                <!-- Timer -->
+                                <div class="video-timer">
+                                    <span id="recordingTime">00:00</span>
+                                    <span class="timer-limit">(Max 60 seconds)</span>
+                                </div>
+
+                                <!-- Status Messages -->
+                                <div id="videoStatus" class="video-status"></div>
+
+                                <!-- Video Preview Player -->
+                                <div id="videoPlaybackSection" class="video-playback-section" style="display:none;">
+                                    <h4>Video Preview</h4>
+                                    <video id="videoPlayback" class="video-playback" controls></video>
+                                    <p class="form-hint">Review your video before submitting</p>
+                                </div>
+                            </div>
+
+                            <!-- Hidden input for video blob -->
+                            <input type="hidden" id="videoData" name="videoData">
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="videoConsent" name="videoConsent">
+                            <label for="videoConsent">I agree that my video introduction can be shared on LibDate</label>
+                        </div>
+
+                        <p class="form-hint">💡 Tips for a great video:
+                            <br>✓ Look at the camera and smile
+                            <br>✓ Speak clearly about yourself
+                            <br>✓ Show your personality
+                            <br>✓ Keep it between 30-60 seconds
+                        </p>
+                    </div>
+
+                    <!-- Form Navigation Buttons -->
+                    <div class="form-navigation">
+                        <button type="button" id="prevBtn" class="btn-nav" onclick="changeStep(-1)">← Previous</button>
+                        <span class="step-indicator"><span id="currentStep">1</span> / 7</span>
+                        <button type="button" id="nextBtn" class="btn-nav" onclick="changeStep(1)">Next →</button>
+                    </div>
+
+                    <!-- Submit Button (Hidden until last step) -->
+                    <div class="form-submit" id="submitDiv" style="display:none;">
+                        <button type="submit" class="btn-submit">Create My Profile 💕</button>
+                        <p class="form-hint">By clicking submit, your profile will be created and added to our database</p>
+                    </div>
+                </form>
+
+                <p class="login-link">Already have an account? <a href="index.html">Login here</a></p>
+            </div>
+        </div>
+
+        <!-- Footer Navigation -->
+        <footer class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="index.html">About</a>
+            <a href="index.html">Contact</a>
+        </footer>
+    </div>
+
+    <script src="scripts/signup.js"></script>
+</body>
+</html>

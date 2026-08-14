@@ -8,8 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('LibDate app initialized');
     initializeEventListeners();
     setupProfileClickHandlers();
+    setupViewProfileButtons();
+    setupDailyMatchCardClicks();
     setupMessageInput();
     setupFilterHandlers();
+    setupButtonHandlers();
 });
 
 // ===========================
@@ -27,8 +30,7 @@ function initializeEventListeners() {
     const ctaBtn = document.querySelector('.cta-btn');
     if (ctaBtn) {
         ctaBtn.addEventListener('click', () => {
-            alert('Redirecting to sign up page...');
-            window.location.href = '#signup';
+            window.location.href = 'signup.html';
         });
     }
 
@@ -46,7 +48,7 @@ function initializeEventListeners() {
     if (signupBtn) {
         signupBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            showSignupModal();
+            window.location.href = 'signup.html';
         });
     }
 }
@@ -58,36 +60,47 @@ function initializeEventListeners() {
 function setupProfileClickHandlers() {
     const profileCards = document.querySelectorAll('.profile-card');
     profileCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const profileName = card.querySelector('.profile-name').textContent;
-            console.log('Viewing profile:', profileName);
-            window.location.href = 'profile.html';
-        });
+        const card_element = card.querySelector('.profile-image');
+        if (card_element) {
+            card_element.addEventListener('click', () => {
+                const profileName = card.querySelector('.profile-name').textContent;
+                console.log('Viewing profile:', profileName);
+                window.location.href = 'profile.html';
+            });
+            card_element.style.cursor = 'pointer';
+        }
     });
 
-    const resultItems = document.querySelectorAll('.result-item');
-    resultItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const name = item.querySelector('h4').textContent;
-            console.log('Viewing search result:', name);
-            window.location.href = 'profile.html';
-        });
-    });
-
-    // Match cards
+    // Match cards with overlay effect
     const matchCards = document.querySelectorAll('.daily-match-card');
     matchCards.forEach(card => {
         card.addEventListener('click', () => {
-            console.log('Viewing match');
+            const name = card.querySelector('p').textContent;
+            console.log('Viewing match:', name);
             window.location.href = 'profile.html';
         });
     });
+}
 
-    // Verify buttons
-    const verifyBtns = document.querySelectorAll('.verify-btn');
-    verifyBtns.forEach(btn => {
+// Universal View Profile Button Handler
+function setupViewProfileButtons() {
+    const viewProfileBtns = document.querySelectorAll('.view-profile-btn:not(.daily-match-card)');
+    viewProfileBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
+            const profileName = btn.closest('.profile-card, .result-item, .match-item, .daily-match-item')?.querySelector('h4, h3, .profile-name, p')?.textContent;
+            console.log('Viewing profile:', profileName || 'Unknown');
+            window.location.href = 'profile.html';
+        });
+    });
+}
+
+// Handle daily match cards (they use the class as a clickable element)
+function setupDailyMatchCardClicks() {
+    const dailyMatchCards = document.querySelectorAll('.daily-match-card[data-action="view-profile"]');
+    dailyMatchCards.forEach(card => {
+        card.addEventListener('click', () => {
+            console.log('Viewing daily match profile');
             window.location.href = 'profile.html';
         });
     });
@@ -122,6 +135,12 @@ function setupMessageInput() {
 
             const name = item.querySelector('h4').textContent;
             updateConversation(name);
+        });
+
+        // Add view profile functionality to conversation items
+        item.addEventListener('dblclick', () => {
+            console.log('Viewing conversation profile');
+            window.location.href = 'profile.html';
         });
     });
 }
@@ -212,7 +231,7 @@ function setupFilterHandlers() {
 // ===========================
 
 function setupButtonHandlers() {
-    // Send Message buttons
+    // Send Message buttons (on profile page)
     const sendMessageBtns = document.querySelectorAll('.btn-primary');
     sendMessageBtns.forEach(btn => {
         if (btn.textContent.includes('Send Message')) {
@@ -222,37 +241,23 @@ function setupButtonHandlers() {
         }
     });
 
-    // Send Wink buttons
+    // Send Wink buttons (on profile page)
     const winkBtns = document.querySelectorAll('.btn-secondary');
     winkBtns.forEach(btn => {
         if (btn.textContent.includes('Wink')) {
-            btn.addEventListener('click', () => {
-                alert('Wink sent!');
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Wink sent! ❤️');
                 btn.textContent = 'Wink Sent ✓';
                 btn.disabled = true;
+                setTimeout(() => {
+                    btn.textContent = 'Send Wink';
+                    btn.disabled = false;
+                }, 3000);
             });
         }
     });
-
-    // Match view buttons
-    const matchBtns = document.querySelectorAll('.match-btn');
-    matchBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            window.location.href = 'profile.html';
-        });
-    });
-
-    // Photo buttons
-    const photoBtns = document.querySelectorAll('.photo-btn');
-    photoBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            window.location.href = 'profile.html';
-        });
-    });
 }
-
-document.addEventListener('DOMContentLoaded', setupButtonHandlers);
 
 // ===========================
 // Modal Dialogs
@@ -265,17 +270,6 @@ function showLoginModal() {
         if (password) {
             alert(`Welcome back! Logged in as ${email}`);
             console.log('User logged in:', email);
-        }
-    }
-}
-
-function showSignupModal() {
-    const email = prompt('Enter your email:');
-    if (email) {
-        const password = prompt('Create a password:');
-        if (password) {
-            alert(`Welcome to LibDate, ${email}!`);
-            console.log('New user registered:', email);
         }
     }
 }

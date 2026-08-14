@@ -48,10 +48,31 @@ body {
     gap: 20px;
 }
 
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.flag-logo {
+    height: 35px;
+    width: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+.flag-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
 .logo {
     font-size: 24px;
     font-weight: bold;
     color: white;
+    margin: 0;
 }
 
 .nav-link {
@@ -1005,6 +1026,59 @@ body {
 }
 
 /* ===========================
+   View Profile Button (Universal)
+   =========================== */
+
+.view-profile-btn {
+    background-color: #ff6b9d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.view-profile-btn:hover {
+    background-color: #ff5a8d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 157, 0.4);
+}
+
+.profile-card .view-profile-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+.daily-match-card.view-profile-btn {
+    cursor: pointer;
+    position: relative;
+}
+
+.daily-match-card.view-profile-btn::after {
+    content: 'View Profile';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.daily-match-card.view-profile-btn:hover::after {
+    opacity: 1;
+}
+
+/* ===========================
    Footer Navigation
    =========================== */
 
@@ -1038,6 +1112,14 @@ body {
 @media (max-width: 768px) {
     .navbar-left {
         gap: 15px;
+    }
+
+    .logo-section {
+        gap: 8px;
+    }
+
+    .flag-logo {
+        height: 28px;
     }
 
     .navbar-right {
@@ -1109,6 +1191,14 @@ body {
 @media (max-width: 480px) {
     .logo {
         font-size: 18px;
+    }
+
+    .logo-section {
+        gap: 6px;
+    }
+
+    .flag-logo {
+        height: 24px;
     }
 
     .hero-content h2 {
